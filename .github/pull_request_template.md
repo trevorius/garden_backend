@@ -1,5 +1,5 @@
 ## PR title
-
+Closes #`issue number`
 ### changes:
  - change1 
  - change1 
@@ -9,4 +9,7 @@
 
 - [ ] tested all new functions 
 
+### check code 
 
+- [ ] viewed all code files
+- [ ] ready to merge
