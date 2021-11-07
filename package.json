@@ -1,0 +1,19 @@
+{
+  "name": "gargen_backend",
+  "version": "1.0.0",
+  "description": "backend for jardin domaine d'antoine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorius/garden_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevorius/garden_backend/issues"
+  },
+  "homepage": "https://github.com/trevorius/garden_backend#readme"
+}
