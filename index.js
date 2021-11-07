@@ -1,5 +1,6 @@
 require('dotenv').config()
+const test = require("./app")
 
-test_var = process.env.TEST_VAR
 
-console.log(test_var)
+console.log(test())
+
