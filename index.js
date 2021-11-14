@@ -1,6 +1,9 @@
-require('dotenv').config()
-const test = require("./app")
+require('dotenv').config();
+const express = require('express');
+const app = express();
 
-
-console.log(test())
+//listen on 3000
+app.listen(3000, () => {
+  console.log('listening on 3000');
+});
 
