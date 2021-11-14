@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/trevorius/garden_backend#readme",
   "devDependencies": {
-    "jest": "^27.3.1"
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
