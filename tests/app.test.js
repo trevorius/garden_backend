@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // import test function from app file to a constant
-const test = require('../app');
+const test = require('../app/app');
 // first test
 describe('test', () => {
   it('should return a string', () => {
