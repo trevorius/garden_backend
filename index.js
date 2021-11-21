@@ -1,6 +1,4 @@
-require('dotenv').config()
-const test = require("./app")
-
-
-console.log(test())
-
+require('dotenv').config();
+// import server and listen
+const app = require('./app/server');
+app.listen(3000);
