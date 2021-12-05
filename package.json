@@ -1,11 +1,17 @@
 {
-  "name": "gargen_backend",
+  "name": "garden_backend",
   "version": "1.0.0",
   "description": "backend for jardin domaine d'antoine",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "start": "nodemon index.js",
+    "test:watch": "cross-env NODE_ENV=test npm run pretest && jest --watch",
+    "migrate": "npx sequelize-cli db:migrate",
+    "create-test-db": "cross-env NODE_ENV=test npx sequelize-cli db:create",
+    "seed": "npx sequelize-cli db:seed:all",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 ",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -18,6 +24,7 @@
   },
   "homepage": "https://github.com/trevorius/garden_backend#readme",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^27.3.1",
     "sequelize-cli": "^6.3.0",
     "supertest": "^6.1.6"
