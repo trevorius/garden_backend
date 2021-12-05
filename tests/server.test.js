@@ -14,3 +14,9 @@ it('gets the test endpoint', async () => {
   expect(response.body.message).toBe('pass!');
 });
 
+it(' posts datetime.now to specified (by Id parameter) beds.lastWatered', async () => {
+  const response = await request.post('/watered').send({ id: 1 });
+
+  expect(response.status).toBe(201);
+  // expect(response.body).toHaveProperty('post');
+});
