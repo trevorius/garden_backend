@@ -14,12 +14,3 @@ it('gets the test endpoint', async () => {
   expect(response.body.message).toBe('pass!');
 });
 
-it('posts the watered endpoint', async () => {
-  const response = await request.post('/watered').send({
-    id: 1
-  });
-
-  expect(response.status).toBe(201);
-  expect(response.body.message).toBe('watered!');
-
-});
