@@ -1,10 +1,19 @@
 const express = require('express');
 const bodyParser = require("body-parser");
+const cors = require('cors');
+
 const app = express();
+
+var corsOptions = {
+  origin: "http://localhost:3000"
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Middlewares...
-
+const { db, sequelize } = require('../config/db/db');
+db.sequelize.sync();
 // Routes...
 
 // GET /test route response is message: "pass!" as json
