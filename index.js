@@ -4,6 +4,9 @@ const ENV = process.env.NODE_ENV || 'development';
 // import server and listen
 const app = require('./app/server');
 const { db, sequelize } = require('./config/db/db');
+const syncDB = async () => {
+  await db.sequelize.sync();
+};
 
 testConnection = async () => {
   try {
@@ -14,6 +17,7 @@ testConnection = async () => {
   }
 };
 testConnection();
+syncDB();
 
 console.log(`ENV: ${ENV}`);
 
