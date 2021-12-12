@@ -23,7 +23,11 @@ const options = () => {
 const sequelize = new Sequelize(options());
 
 
+const db = {};
 
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
+db.beds = require('./models/bed');
 
-module.exports = sequelize;
+module.exports = { db: db, sequelize: sequelize };
