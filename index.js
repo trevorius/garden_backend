@@ -3,11 +3,11 @@ const ENV = process.env.NODE_ENV || 'development';
 
 // import server and listen
 const app = require('./app/server');
-const db = require('./config/db/db');
+const { db, sequelize } = require('./config/db/db');
 
 testConnection = async () => {
   try {
-    await db.authenticate();
+    await sequelize.authenticate();
     console.log('Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
