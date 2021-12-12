@@ -14,7 +14,7 @@ app.get('/test', async (req, res) => {
   res.status(200).json(response);
 });
 
-app.post('/watered', async (req, res) => {
+app.post('/beds/watered', async (req, res) => {
   const bedId = req.body.id;
   console.log('req.body: ', req.body);
   response = { message: 'watered!' };
