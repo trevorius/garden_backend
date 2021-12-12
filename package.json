@@ -4,7 +4,8 @@
   "description": "backend for jardin domaine d'antoine",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "start:dev": "nodemon index.js",
     "test:watch": "cross-env NODE_ENV=test npm run pretest && jest --watch",
     "migrate": "npx sequelize-cli db:migrate",
     "create-test-db": "cross-env NODE_ENV=test npx sequelize-cli db:create",
