@@ -28,6 +28,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.beds = require('./models/bed');
+db.beds = require('./models/bed')(sequelize, Sequelize);
 
 module.exports = { db: db, sequelize: sequelize };
