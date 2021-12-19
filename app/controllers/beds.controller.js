@@ -81,7 +81,23 @@ exports.findOne = (req, res) => {
 exports.watered = async (req, res) => {
   const bedId = req.body.id;
   console.log('req.body: ', req.body);
+  // error handling : 
+  // if bedId is not a number return badrequest
+  if (isNaN(bedId)) {
+    res.status(400).send({
+      message: "Bed Id is not a number"
+    });
+    return;
+  };
   var bed = await Beds.findByPk(bedId);
+  // if bedId is not in the database return notfound
+  if (!bed) {
+    res.status(404).send({
+      message: "Bed not found"
+    });
+    return;
+  }
+
   Beds.update({ lastWatered: Date.now() }, { where: { id: bedId } })
     .then(() => {
       response = { message: 'watered!' };
