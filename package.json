@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "start:dev": "nodemon index.js",
-    "test:watch": "cross-env NODE_ENV=test npm run pretest && jest --watch",
+    "test:watch": "cross-env NODE_ENV=test npm run pretest && jest --watch --detectOpenHandles",
     "migrate": "npx sequelize-cli db:migrate",
     "create-test-db": "cross-env NODE_ENV=test npx sequelize-cli db:create",
     "seed": "npx sequelize-cli db:seed:all",
