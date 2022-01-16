@@ -154,3 +154,6 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
 
 cockroach-v21.1.10.linux-amd64
+
+# Jetbrains Toolbox
+.idea

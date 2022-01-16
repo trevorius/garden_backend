@@ -4,7 +4,7 @@
   "description": "backend for jardin domaine d'antoine",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
+    "start": "cross-env NODE_ENV=development node index.js",
     "start:dev": "nodemon index.js",
     "test:watch": "cross-env NODE_ENV=test npm run pretest && jest --watch --detectOpenHandles",
     "migrate": "npx sequelize-cli db:migrate",
@@ -12,7 +12,8 @@
     "seed": "npx sequelize-cli db:seed:all",
     "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 ",
-    "pretest": "cross-env NODE_ENV=test npm run migrate:reset && npm run seed"
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset && npm run seed",
+    "debug": "nodemon --inspect index.js"
   },
   "repository": {
     "type": "git",

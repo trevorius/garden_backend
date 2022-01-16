@@ -25,6 +25,7 @@ app.get('/test', async (req, res) => {
   res.status(200).json(response);
 });
 
+
 app.post('/beds/watered', async (req, res) => {
 
   await bedsController.watered(req, res);
